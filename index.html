@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billing Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!--  ADDED: Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand"><i class="fa-solid fa-sack-dollar" style="color: gold;"></i> Billing System</span>
+ 
+    <div>
+      <button class="btn btn-warning" onclick="showLogin()">Admin</button>
+      <button class="btn btn-light ms-2" onclick="toggleDark()"><i class="fa-solid fa-moon" style="color: gold;"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- LOGIN -->
+<div class="container mt-3 d-none" id="loginBox">
+  <div class="card p-3 mx-auto w-100" style="max-width:400px;">
+    <h4 class="text-center">Admin Login</h4>
+
+    <input id="adminUser" class="form-control mb-2 mt-3" placeholder="Username">
+    <input id="adminPass" type="password" class="form-control mb-2" placeholder="Password">
+
+    <div class="text-center mt-3">
+      <button class="btn btn-success me-2" onclick="adminLogin()">Login</button>
+      <button class="btn btn-secondary" onclick="closeLogin()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- USER PAGE -->
+<div class="container mt-4" id="userPage">
+  <h3>Payment History</h3>
+  <input id="search" class="form-control mb-3" placeholder="Search..." onkeyup="renderUser()">
+
+  <!-- RESPONSIVE TABLE -->
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="userTable"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="d-none">
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- SIDEBAR -->
+      <div class="col-12 col-md-3 col-lg-2 bg-dark text-white p-3" id="sidebar">
+        <h4>Admin</h4>
+        <a href="#" class="d-block text-white mb-2" onclick="dashboard()">Dashboard</a>
+        <a href="#" class="d-block text-white mb-2" onclick="paymentsPage()">Payments</a>
+        <a href="#" class="d-block text-white mb-2" onclick="addPage()">Add Payment</a>
+        <a href="#" class="d-block text-white mb-2" onclick="logout()">Logout</a>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="col-12 col-md-9 col-lg-10 p-4" id="content"></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- JS connect -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

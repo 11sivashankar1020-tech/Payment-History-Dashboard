@@ -1,0 +1,64 @@
+  body { background:#f4f6f9; }
+
+/* Sidebar */
+#sidebar{
+   min-height:100vh;
+   background:#212529;
+   color:white;
+   padding:20px;
+}
+
+#sidebar a{
+  display:block;
+  color:white;
+  margin:10px 0;
+  text-decoration:none;
+}
+
+/* Cards */
+.card{
+  border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Status */
+.paid{color:green;font-weight:bold;}
+.pending{color:orange;font-weight:bold;}
+.failed{color:red;font-weight:bold;}
+
+/*  DARK MODE */
+.dark{
+  background:#121212 !important;
+  color:white !important;
+}
+.dark .card{
+  background:#1e1e1e;
+  color:white;
+}
+.dark table{
+  color:white;
+}
+
+@media (max-width: 768px) {
+   #sidebar {
+      min-height:auto;
+      width: 100%;
+   }
+
+   .col-md-2,
+   .col-md-10 {
+      width: 100%;
+   }
+
+   table {
+      overflow-x: auto;
+   }
+
+   .w-50 {
+      width: 100% !important;
+   }
+
+   #content {
+      padding: 10px;
+   }
+}
